@@ -15,6 +15,9 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 // app.use(bodyParser.urlencoded({extended:true}))
+app.use("/", (req, res) => {
+    res.send("Server is runing")
+})
 /**Lets run our api on port 7000 */
 app.listen(process.env.PORT, ()=>{
     console.log(`Our API is running ${process.env.PORT}`)
